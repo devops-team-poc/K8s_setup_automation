@@ -1,23 +1,23 @@
 #!/bin/bash
 
-# mount dvd 
-mkdir /dvd
-mount /dev/cdrom /dvd
-cat << eof >> /etc/rc.d/rc.local
-mount /dev/cdrom /dvd
-eof
-chmod +x /etc/rc.d/rc.local
+# # mount dvd 
+# mkdir /dvd
+# mount /dev/cdrom /dvd
+# cat << eof >> /etc/rc.d/rc.local
+# mount /dev/cdrom /dvd
+# eof
+# chmod +x /etc/rc.d/rc.local
 
-# create local yum
-cat <<eof > /etc/yum.repos.d/dvd.repo
-[AppStream]
-baseurl=file:///dvd/AppStream
-gpgcheck=0
+# # create local yum
+# cat <<eof > /etc/yum.repos.d/dvd.repo
+# [AppStream]
+# baseurl=file:///dvd/AppStream
+# gpgcheck=0
 
-[BaseOS]
-baseurl=file:///dvd/BaseOS
-gpgcheck=0
-eof
+# [BaseOS]
+# baseurl=file:///dvd/BaseOS
+# gpgcheck=0
+# eof
 
 # install basic tools
 yum install net-tools vim -y
