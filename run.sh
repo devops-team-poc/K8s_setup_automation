@@ -62,4 +62,4 @@ sysctl --system
 # kubeadm initialisation
 kubeadm config images pull
 
-kubeadm init --pod-network-cidr=10.240.0.0/16 > output.txt
+kubeadm init --pod-network-cidr=<available ip's cidr> > output.txt
